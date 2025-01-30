@@ -30,3 +30,5 @@ for e in elemento:
             print(titulo, protagonista, director)
         case _:
             print("No match")
+            
+# funcionalidad para detectar patrones
