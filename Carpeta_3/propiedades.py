@@ -1,13 +1,15 @@
-# poema = """ahora si todo saldra bien , y lo que no
-# pues los superaremos, y si no, pues tambien"""
+# Propiedades 
+# properties
 
-# print(poema)
+poema = """ahora si todo saldra bien , y lo que no
+pues los superaremos, y si no, pues tambien"""
 
-# poema = """ahora si todo saldra bien , y lo que no
-# pues los superaremos, y si no, pues tambien"""
+print(poema)
 
-# print('ahora' not in poema)
+poema = """ahora si todo saldra bien , y lo que no
+pues los superaremos, y si no, pues tambien"""
 
+print('ahora' not in poema)
 
 poema = """ahora si todo saldra bien , y lo que no
 pues los superaremos, y si no, pues tambien"""

@@ -1,3 +1,6 @@
+# Listas 
+# Lists
+
 mi_lista = ["a", "b", "c"]
 otra_lista = ["hola",55,6.1]
 mi_ultima_lista = mi_lista + otra_lista

@@ -1,3 +1,23 @@
+# Proyecto practivo
+# Practical project
+
+"""  
+-- instrucciones en español -- 
+
+Proyecto: Analizador de texto.
+- Ingresa 3 letras y te dice cuántas veces se repiten estas en el texto ingresado
+- Cuenta cuantas palabras tiene el texto
+- Te dice con qué letra inicia y con que letra termina tu texto
+
+-- instructions in English --
+
+Project: Text Analyzer.
+- Enter 3 letters and it tells you how many times they are repeated in the entered text
+- Counts how many words the text has
+- Tells you with which letter your text begins and with which letter it ends
+
+"""
+
 a = input("\n\nIngrea el texto que deseas analizar: ")
 b = input("Ingresa 3 letras de tú elección SIN ESPACIOS: ")
 
@@ -35,7 +55,7 @@ texto_invertido = " ".join(lista1)
 
 print(f"Tu texto invertido es: {texto_invertido}\n")
 
-print("Buscando la plabra 'hola' en tu texto")
+
 
 
 
