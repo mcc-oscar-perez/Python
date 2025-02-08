@@ -1,3 +1,6 @@
+# Ejercicio practico 
+# practical exercise 
+
 x = input("¿cual es tu nombre? ")
 y = input("¿cuantas ventas realizaste? ")
 

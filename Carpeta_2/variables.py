@@ -1,3 +1,5 @@
+# Variables
+
 nombre = "Juan"
 print(nombre)
 

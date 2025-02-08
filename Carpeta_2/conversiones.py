@@ -1,13 +1,18 @@
-# num1 = 5.8
 
-# print(num1)
-# print(type(num1))
+#Conversiones de tipo de dato
+#Data Type Conversions
+# ----------------------------------------------
+num1 = 5.8
 
-# num2 = int(num1)
+print(num1)
+print(type(num1))
 
-# print(num2)
-# print(type(num2))
+num2 = int(num1)
 
+print(num2)
+print(type(num2))
+
+# ----------------------------------------------
 edad = input("Ingresa tu edad: ")
 edad = int(edad)
 

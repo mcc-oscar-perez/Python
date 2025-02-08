@@ -1,5 +1,5 @@
-# Ejercicios de practica de "print"
-# practice exercises with "print"
+# Ejercicios de practica de "input"
+# practice exercises with "input"
 
 print(input("Dime tu nombre: "))
 print(input("Dime tu apellido: "))
