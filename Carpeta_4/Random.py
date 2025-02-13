@@ -1,3 +1,5 @@
+# random
+
 from random import *
 
 aleatorio =round(uniform(1, 5),2)

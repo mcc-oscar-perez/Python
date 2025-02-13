@@ -1,7 +1,7 @@
-
+# compresion de listas 
+# list compression
 
 palabra = "python"
-
 lista = []
 
 # sin comprension de listas

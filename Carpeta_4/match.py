@@ -1,14 +1,17 @@
-# serie = "N-02"
+# usando match
+# Using match
 
-# match serie:
-#     case "N-01":
-#         print("Samsung")
-#     case "N-02":
-#         print("Nokia")
-#     case "N-03":
-#         print("Motorola")
-#     case _:
-#         print("No match")
+serie = "N-02"
+
+match serie:
+    case "N-01":
+        print("Samsung")
+    case "N-02":
+        print("Nokia")
+    case "N-03":
+        print("Motorola")
+    case _:
+        print("No match")
 
 cliente = {"nombre": "federico",
             "edad": 45, 

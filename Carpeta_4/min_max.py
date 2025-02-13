@@ -1,7 +1,10 @@
-# menor = min(58,98,33,44,67,22)
-# mayor = max(58,98,33,44,67,22)
-# print(menor)
-# print(mayor)
+# Maximo y minimo
+# min and max
+
+menor = min(58,98,33,44,67,22)
+mayor = max(58,98,33,44,67,22)
+print(menor)
+print(mayor)
 
 lista = [58,98,33,44,67,22]
 print(f"El menor es: {min(lista)} y el mayor es: {max(lista)}")

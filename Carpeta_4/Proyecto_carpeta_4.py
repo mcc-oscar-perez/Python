@@ -1,8 +1,18 @@
+"""
+Ejercicio:  juego de adivinar el numero 
+Programar un juego que te de 8 intentos para adivinar u numero secreto que este pensando el programa 
+
+Exercise: guess the number game
+Program a game that gives you 8 attempts to guess the secret number that the program is thinking of
+
+"""
+
+
 nombre =  input("¿Cual es tu nombre? ")
 print("\nHola", nombre, "Estoy pensando en un número entre 1 y 100. Intenta adivinarlo en solo 8 intentos.")
 
 numero = 10
-intentos = 2
+intentos = 8
 numero_del_usuario = int(input("\n¿Cual es el numero en que pienso? "))
 
 while intentos >= 1:

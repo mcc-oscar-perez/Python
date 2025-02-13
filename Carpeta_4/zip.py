@@ -1,3 +1,6 @@
+# Usando zip
+# Using zip
+
 nombres = ['Ana', 'Carlos', 'Beatriz', 'David']
 edades = [23, 45, 34, 32]  
 ciudades = ['Madrid', 'Barcelona', 'Bilbao', 'Valencia']
