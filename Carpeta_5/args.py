@@ -1,11 +1,12 @@
+# Uso de args en funciones 
+# Using args in functions
+
 def suma_cuadrados(*args):
     
     total = 0
     for numero in args:
         total += numero**2
     return total 
-    
-
 
 def suma_absolutos(*args):
     total = 0

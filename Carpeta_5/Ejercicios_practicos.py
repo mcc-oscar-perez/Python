@@ -1,3 +1,8 @@
+# Ejecicios practicos de funciones 
+# Practical exercises on functions
+
+#%%
+# Ejercicio practico 1 
 def devolver_distintos(a,b,c):
 
     suma = a+b+c
@@ -8,13 +13,12 @@ def devolver_distintos(a,b,c):
     elif suma < 10:
         return min(lista)
     else:
-        lista.sort()
+        lista.sort() 
         return lista[1]
     
-#print(devolver_distintos(8,1,0))
-
-
-
+print(devolver_distintos(8,1,0))
+#%%
+# Ejercicio practico 2
 def x (texto):
     lista = list(texto)
     lista2 = list(set(lista))
@@ -22,9 +26,11 @@ def x (texto):
     return lista2
     
 
-#texto = "cascarrabias"
-#print(x(texto))
+texto = "cascarrabias"
+print(x(texto))
 
+#%%
+# Ejercicio practico 3
 def vecinos(*args):
     
     for i in range(len(args)-1):
@@ -33,10 +39,11 @@ def vecinos(*args):
         
     return False
         
-# print(vecinos(1, 0, 0, 2, 3))  
-# print(vecinos(1, 2, 3, 4)) 
-    
+print(vecinos(1, 0, 0, 2, 3))  
+print(vecinos(1, 2, 3, 4)) 
 
+#%%   
+# Ejercicio practico 4
 def es_primo(n):
     if n <= 1:
         return False
@@ -61,3 +68,5 @@ def contar_primos(n):
 numero = 36
 cantidad_primos = contar_primos(numero)
 print(f"Cantidad de números primos entre 0 y {numero}: {cantidad_primos}")
+
+# %%

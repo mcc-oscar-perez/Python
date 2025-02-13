@@ -1,13 +1,16 @@
-# def suma(**kwargs):
+# Funciones con Kwargs
+# Functions with kwargs
+
+def suma(**kwargs):
     
-#     Total = 0 
+    Total = 0 
     
-#     for clave,valor in kwargs.items():
-#         print(f"{clave} = {valor} ")
-#         Total += valor
-#     return Total
+    for clave,valor in kwargs.items():
+        print(f"{clave} = {valor} ")
+        Total += valor
+    return Total
         
-# print(suma(x=3 , y=5 , z=2))
+print(suma(x=3 , y=5 , z=2))
 
 
 def describir_persona(nombre,**kwargs):

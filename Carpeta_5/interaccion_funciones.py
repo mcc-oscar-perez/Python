@@ -1,3 +1,6 @@
+# Interaccion de funciones
+# Interaction of functions 
+
 from random import shuffle
 import random
 

@@ -1,3 +1,6 @@
+# Ejemplo de una funcion 
+# Example of a function 
+
 precios_cafe = [('capuchino',1.5), ('Expresso',1.2), ('Moka',1.9)]
 
 def cafe_mas_caro(lista_precios):

@@ -1,4 +1,7 @@
+# Funciones
+# Function
+
 def saludar_persona (nombre):
     print(nombre)
     
-saludar_persona(5)
+saludar_persona("kevin")
