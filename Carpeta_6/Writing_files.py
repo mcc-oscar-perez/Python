@@ -33,7 +33,6 @@ mi_archivo.writelines(['uno','dos','tres','cuatro'])
 
 mi_archivo.close()
 # %%
-
 # Abrir el archivo y escribir pero desde la parte final del mismo con "a"
 # Open the file and write but from the end of it with "a"
 
@@ -44,3 +43,38 @@ mi_archivo.write(" Bienvenido nuevo texto ")
 mi_archivo.close()
 
 # %%
+# Ejercicios practicos extra
+# Exetra practical exercises 
+
+# 1
+
+archivo = open("mi_archivo.txt", "w")
+archivo.write("Nuevo texto")
+archivo.close()
+archivo = open("mi_archivo.txt", "r")
+print(archivo.read())
+
+# 2 
+
+archivo = open("mi_archivo.txt","a") 
+
+archivo.write("Nuevo inicio de sesión")
+
+archivo.close()
+
+archivo = open("mi_archivo.txt","r")
+print(archivo.read())
+
+
+
+# 3 
+
+registro_ultima_sesion = ["Federico", "20/12/2021", "08:17:32 hs", "Sin errores de carga"]
+
+registro = open("registro.txt","a")
+for item in registro_ultima_sesion:
+    registro.writelines(item +'\t')
+
+registro.close()
+registro = open("registro.txt","r")
+print(registro.read())
