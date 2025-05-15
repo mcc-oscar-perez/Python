@@ -48,14 +48,43 @@ class Pajaro: # this is the class
         self.color = color # instance attribute
         self.especie = especie # instance attribute
     
-    def piar(self): # this is a method of the class Pajaro <---
+    # this is an instance method <---
+    def piar(self): 
         print(f"pio, mi color es {self.color}")
-        
+    
+    # The instance method can call other instance methods
     def volar(self, metros):
         print(f"El pajaro vuela {metros} metros")
+        self.piar()
+    
+    # the instance method can change the instance atributes
+    def cambiar_color(self):
+        self.color = 'Negro'
+        print(f"Ahora el pajaro es {self.color}")
         
-piolin = Pajaro("rojo", "canario") # this is an instance of the class Pajaro
-piolin.piar() # this is how to call a method of the class Pajaro
-piolin.volar(10) # this is how to call a method of the class Pajaro
+    # class methods <---
+    # This method does not need an instance to run 
+    @classmethod
+    def poner_huevos(cls,cantidad):
+        print(f"Puso {cantidad} huevos")
+    
+    # Static method <---
+    # This method helps us to set attributes that cannot be modified 
+    @staticmethod
+    def mirar():
+        print("EL pajaro mira")
+    
+    
+        
+piolin = Pajaro("amarillo", "canario") # this is an instance of the class Pajaro
+# piolin.piar() # this is how to call a method of the class Pajaro
+# piolin.volar(10) # this is how to call a method of the class Pajaro
+# piolin.cambiar_color()
+
+#  We can change the class attributes as  follows
+piolin.alas = False
+print(piolin.alas)
+Pajaro.poner_huevos(3)
 
 # %%
+
