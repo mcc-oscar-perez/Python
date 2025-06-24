@@ -40,7 +40,7 @@ def prueba_for (numero):
     return lista 
 """
 
-duracion = timeit.timeit(declaracion, mi_setup, number=1000000)
+duracion = timeit.timeit(declaracion, mi_setup, number=10000000)
 print(f"Tiempo de ejecución con timeit: {round(duracion, 5)} segundos")
 
 declaracion2 = """
@@ -56,7 +56,7 @@ def prueba_while(numero):
     return lista
 """
 
-duracion2 = timeit.timeit(declaracion2, mi_setup2, number=1000000)
+duracion2 = timeit.timeit(declaracion2, mi_setup2, number=10000000)
 print(f"Tiempo de ejecución con timeit: {round(duracion2, 5)} segundos")
 
 
