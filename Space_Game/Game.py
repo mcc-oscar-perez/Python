@@ -34,6 +34,7 @@ enemy_x_change = []
 enemy_y_change = []
 number_of_enemys = 8
 
+
 for e in range(number_of_enemys):
     img_enemy.append(pygame.image.load("D:\Cursos\PYTHON\Space_Game\enemy.png"))
     enemy_x.append(random.randint(0, 768))  # 800 - width of the enemy image (32)  
@@ -42,6 +43,7 @@ for e in range(number_of_enemys):
     enemy_y_change.append(75) # Vertical movement of the enemy
 
 # Bullet
+bullets = []
 img_bullet = pygame.image.load("D:/Cursos/PYTHON/Space_Game/bala.png")
 bullet_x = 0 
 bullet_y = 500 
@@ -113,6 +115,8 @@ while se_ejecuta:
             if event.key == pygame.K_SPACE:
                 bullet_sound = mixer.Sound("D:/Cursos/PYTHON/Space_Game/disparo.mp3")  # load bullet sound
                 bullet_sound.play()  # Play the sound effect
+                new_bullet = {'x': jugador_x, 'y': jugador_y,"velocity":-5}
+                bullets.append(new_bullet)  # Add a new bullet to the list
                 if not bullet_visible:  # Only allow shooting if the bullet is not visible
                     bullet_x = jugador_x
                     bullet(bullet_x, bullet_y) 
