@@ -1,6 +1,7 @@
 import pygame
 import random
 import math
+from pygame import mixer
 
 # First, we need to initialize pygame
 pygame.init()
@@ -13,6 +14,11 @@ pygame.display.set_caption("Invasión Alienígena")
 icono = pygame.image.load("D:\Cursos\PYTHON\Space_Game\ovni.png")
 pygame.display.set_icon(icono)
 fondo = pygame.image.load("D:/Cursos/PYTHON/Space_Game/Fondo.jpg")
+
+# Background music
+mixer.music.load("D:/Cursos/PYTHON/Space_Game/MusicaFondo.mp3")
+mixer.music.set_volume(0.5)  # Set volume to 50%
+mixer.music.play(-1)  # -1 means the music will loop indefinitely
 
 # Player
 img_jugador = pygame.image.load("D:\Cursos\PYTHON\Space_Game\cohete_espacial.png")
@@ -33,7 +39,7 @@ for e in range(number_of_enemys):
     enemy_x.append(random.randint(0, 768))  # 800 - width of the enemy image (32)  
     enemy_y.append(random.randint(50, 150))  # Random y position for the enemy 
     enemy_x_change.append(0.1)  # Speed of the enemy
-    enemy_y_change.append(25)
+    enemy_y_change.append(75) # Vertical movement of the enemy
 
 # Bullet
 img_bullet = pygame.image.load("D:/Cursos/PYTHON/Space_Game/bala.png")
@@ -45,6 +51,20 @@ bullet_visible = False  # Bullet is not visible initially
 
 # punctuation
 punctuation = 0
+fuente = pygame.font.Font("freesansbold.ttf", 32)
+text_x = 10
+text_y = 10
+
+# End game text
+fuente_final = pygame.font.Font("freesansbold.ttf", 64)
+def end_text():
+    mi_fuente_final = fuente_final.render("¡FIN DEL JUEGO!", True, (255, 255, 255))
+    pantalla.blit(mi_fuente_final, (115, 250))
+    
+# Function to show the score on the screen
+def show_score(x, y):
+    texto = fuente.render(f"Puntuación: {punctuation}", True, (255, 255, 255))
+    pantalla.blit(texto, (x, y))
 
 
 # function to draw the player and enemy on the screen
@@ -91,6 +111,8 @@ while se_ejecuta:
             
             # Here we program the bullet controls
             if event.key == pygame.K_SPACE:
+                bullet_sound = mixer.Sound("D:/Cursos/PYTHON/Space_Game/disparo.mp3")  # load bullet sound
+                bullet_sound.play()  # Play the sound effect
                 if not bullet_visible:  # Only allow shooting if the bullet is not visible
                     bullet_x = jugador_x
                     bullet(bullet_x, bullet_y) 
@@ -112,6 +134,14 @@ while se_ejecuta:
         
     # Update the enemy's position
     for e in range(number_of_enemys):
+        
+        # If the enemy reaches the player
+        if enemy_y[e] > 490:  
+            for j in range(number_of_enemys):
+                enemy_y[j] = 1000
+            end_text()
+            break
+        
         enemy_x[e] += enemy_x_change[e]
     
     # keep the enemy within the screen bounds
@@ -121,10 +151,13 @@ while se_ejecuta:
         elif enemy_x[e] >= 768:  # 800 - width of the player image (64)
             enemy_x_change[e] = -0.1
             enemy_y[e] += enemy_y_change[e]
+        
 
     # Check for collision between the bullet and the enemy
         collition = is_collision(enemy_x[e],enemy_y[e], bullet_x, bullet_y)
         if collition:
+            collition_sound = mixer.Sound("D:/Cursos/PYTHON/Space_Game/Golpe.mp3")
+            collition_sound.play()  # Play the collision sound effect
             bullet_y = 500
             bullet_visible = False
             punctuation += 1
@@ -146,8 +179,12 @@ while se_ejecuta:
     # Call the function to draw the player on the screen
     jugador(jugador_x,jugador_y)  
     
+    # Show the score on the screen
+    show_score(text_x, text_y)
     
     # update 
     pygame.display.update() 
+    
+    
 
 
