@@ -66,44 +66,120 @@ food_list = ['Pollo', 'Carne', 'Pescado', 'Arroz', 'Pasta', 'Ensalada', 'Sopa', 
 drinks_list = ['Agua', 'Refresco', 'Cerveza', 'Vino', 'Zumo', 'Café', 'Té', 'Leche']
 dessert_list = ['Helado', 'Tarta', 'Fruta', 'Yogur', 'Galletas', 'Flan', 'Natillas', 'Chocolates']
 
-# generate meal items
+# generate meal items ------------------------------------------------------------------------------------------------
 meal_variables = []
+frame_0 = []
+text_0 = []
 contador = 0
 
 for i in food_list:
+    
+    # ceate checkbutton
     meal_variables.append('')
     meal_variables[contador] = IntVar()
-    i = Checkbutton(meal_frame, text = i.title(), font=('Dosis',19,'bold'),
-                    onvalue=1, offvalue=0,variable=meal_variables[contador])
-    i.grid(row=contador, column=0, sticky=W)
+    i = Checkbutton(meal_frame, 
+                    text = i.title(), 
+                    font=('Dosis',19,'bold'),
+                    onvalue=1, 
+                    offvalue=0,
+                    variable=meal_variables[contador])
+    i.grid(row=contador,
+            column=0, 
+            sticky=W)
+    
+    #create entry frames
+    frame_0.append('')
+    text_0.append('')
+    text_0[contador] = StringVar()
+    text_0[contador].set('0')
+    
+    
+    frame_0[contador] = Entry(meal_frame,
+                                font=('Dosis',18,'bold'), 
+                                bd=1, 
+                                width=6, 
+                                state=DISABLED,
+                                textvariable=text_0[contador])
+    frame_0[contador].grid(row=contador, 
+                                column=1)
     contador += 1
 
-# generate drinks items
+# generate drinks items --------------------------------------------------------------------------------------------------------
 drinks_variables = []
+frame_1 = []
+text_1 = []
 contador = 0
 
 for i in drinks_list:
+    
+    # ceate checkbutton
     drinks_variables.append('')
     drinks_variables[contador] = IntVar()
-    i = Checkbutton(drinks_frame, text = i.title(), font=('Dosis',19,'bold'),
-                    onvalue=1, offvalue=0,variable=drinks_variables[contador])
-    i.grid(row=contador, column=0, sticky=W)
+    i = Checkbutton(drinks_frame,
+                    text = i.title(),
+                    font=('Dosis',19,'bold'),
+                    onvalue=1,
+                    offvalue=0,
+                    variable=drinks_variables[contador])
+    i.grid(row=contador,
+            column=0,
+            sticky=W)
+    
+    #create entry frames
+    frame_1.append('')
+    text_1.append('')
+    text_1[contador] = StringVar()
+    text_1[contador].set('0')
+    
+    frame_1[contador] = Entry(drinks_frame,
+                                font=('Dosis',18,'bold'), 
+                                bd=1, 
+                                width=6, 
+                                state=DISABLED,
+                                textvariable=text_1[contador])
+    frame_1[contador].grid(row=contador, 
+                                column=1)
     contador += 1
 
 
-# generate drinks items
+# generate drinks items --------------------------------------------------------------------------------------------------------
 dessert_variables = []
+frame_2 = []
+text_2 = []
 contador = 0
 
 for i in dessert_list:
+    
+    # ceate checkbutton
     dessert_variables.append('')
     dessert_variables[contador] = IntVar()
-    i = Checkbutton(dessert_frame, text = i.title(), font=('Dosis',19,'bold'),
-                    onvalue=1, offvalue=0,variable=dessert_variables[contador])
-    i.grid(row=contador, column=0, sticky=W)
+    i = Checkbutton(dessert_frame,
+                    text = i.title(),
+                    font=('Dosis',19,'bold'),
+                    onvalue=1,
+                    offvalue=0,
+                    variable=dessert_variables[contador])
+    i.grid(row=contador,
+            column=0,
+            sticky=W)
+    
+    #create entry frames
+    frame_2.append('')
+    text_2.append('')
+    text_2[contador] = StringVar()
+    text_2[contador].set('0')
+    
+    frame_2[contador] = Entry(dessert_frame,
+                                font=('Dosis',18,'bold'), 
+                                bd=1, 
+                                width=6, 
+                                state=DISABLED,
+                                textvariable=text_2[contador])
+    frame_2[contador].grid(row=contador, 
+                                column=1)
     contador += 1
+
 
 
 # Avoid closing
 app.mainloop()
-
