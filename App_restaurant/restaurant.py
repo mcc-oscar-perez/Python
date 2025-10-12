@@ -4,7 +4,7 @@ from tkinter import *
 app = Tk()
 
 # size of the window
-app.geometry("1020x630+0+0")
+app.geometry("1170x630+0+0")
 
 # Avoid maximizing
 app.resizable(0, 0)
@@ -28,7 +28,7 @@ left_frame = Frame(app, bd=1, relief=FLAT)
 left_frame.pack(side=LEFT)
 
 # cost frame
-cost_frame = Frame(left_frame, bd=1, relief=FLAT)
+cost_frame = Frame(left_frame, bd=1, relief=FLAT, bg='azure4', padx=85)
 cost_frame.pack(side=BOTTOM)
 
 # meal frame 
@@ -180,6 +180,178 @@ for i in dessert_list:
     contador += 1
 
 
+# Variables
+var_cost_meal=StringVar()
+var_cost_drink=StringVar()
+var_cost_dessert=StringVar()
+var_subtotal=StringVar()
+var_tax=StringVar()
+var_total=StringVar()
+
+# Cost labels and input fields (food) --------------------------------
+labels_cost_meal = Label(cost_frame,
+                            text="Costo comida",
+                            font= ('Dosis',12, 'bold'),
+                            bg='azure4',
+                            fg='white')
+labels_cost_meal.grid(row=0, column=0)
+
+text_cost_meal = Entry(cost_frame,
+                        font=('Dosis',12, 'bold'),
+                        bd=1,
+                        width=10,
+                        state='readonly',
+                        textvariable=var_cost_meal)
+text_cost_meal.grid(row=0, column=1, padx = 41)
+
+
+
+# Cost labels and input fields (Drinks) --------------------------------
+labels_cost_drink = Label(cost_frame,
+                            text="Costo bebida",
+                            font= ('Dosis',12, 'bold'),
+                            bg='azure4',
+                            fg='white')
+labels_cost_drink.grid(row=1, column=0)
+
+text_cost_drink = Entry(cost_frame,
+                        font=('Dosis',12, 'bold'),
+                        bd=1,
+                        width=10,
+                        state='readonly',
+                        textvariable=var_cost_drink)
+text_cost_drink.grid(row=1, column=1, padx = 41)
+
+
+# Cost labels and input fields (Dessert) --------------------------------
+labels_cost_dessert = Label(cost_frame,
+                            text="Costo postre",
+                            font= ('Dosis',12, 'bold'),
+                            bg='azure4',
+                            fg='white')
+labels_cost_dessert.grid(row=2, column=0)
+
+text_cost_dessert = Entry(cost_frame,
+                        font=('Dosis',12, 'bold'),
+                        bd=1,
+                        width=10,
+                        state='readonly',
+                        textvariable=var_cost_dessert)
+text_cost_dessert.grid(row=2, column=1, padx = 41)
+
+
+
+# Cost labels and input fields (Subtotal) --------------------------------
+labels_subtotal = Label(cost_frame,
+                            text="Subtotal",
+                            font= ('Dosis',12, 'bold'),
+                            bg='azure4',
+                            fg='white')
+labels_subtotal.grid(row=0, column=2)
+
+text_subtotal = Entry(cost_frame,
+                        font=('Dosis',12, 'bold'),
+                        bd=1,
+                        width=10,
+                        state='readonly',
+                        textvariable=var_subtotal)
+text_subtotal.grid(row=0, column=3, padx = 41)
+
+# Cost labels and input fields (Tax) --------------------------------
+labels_tax = Label(cost_frame,
+                            text="tax",
+                            font= ('Dosis',12, 'bold'),
+                            bg='azure4',
+                            fg='white')
+labels_tax.grid(row=1, column=2)
+
+text_tax = Entry(cost_frame,
+                        font=('Dosis',12, 'bold'),
+                        bd=1,
+                        width=10,
+                        state='readonly',
+                        textvariable=var_tax)
+text_tax.grid(row=1, column=3, padx = 41)
+
+# Cost labels and input fields (Total) --------------------------------
+labels_total = Label(cost_frame,
+                            text="Total",
+                            font= ('Dosis',12, 'bold'),
+                            bg='azure4',
+                            fg='white')
+labels_total.grid(row=2, column=2)
+
+text_total = Entry(cost_frame,
+                        font=('Dosis',12, 'bold'),
+                        bd=1,
+                        width=10,
+                        state='readonly',
+                        textvariable=var_total)
+text_total.grid(row=2, column=3, padx = 41)
+
+#buttons 
+
+buttons = ['Total', 'Ticket', 'Save','Reset']
+Columns = 0 
+
+for i in buttons:
+    i = Button(buttons_frame,
+                text=i.title(),
+                font=('Dosis',14, 'bold'),
+                fg='white',
+                bg= 'azure4',
+                bd= 1,
+                width= 9)
+    
+    i.grid(row=0,column=Columns)
+    Columns+=1
+    
+
+
+# ticket area 
+receipt_text = Text(receipt_frame,
+                    font=('Dosis',12,'bold'),
+                    bd = 1,
+                    width = 42,
+                    height= 10)
+
+receipt_text.grid(row=0,column=0)
+
+
+# Calculator
+visor_calculator = Entry(calculator_frame,
+                        font=('dosis',16,'bold'),
+                        width=32,
+                        bd=1)
+
+visor_calculator.grid(row=0, column=0, columnspan= 4)
+
+
+# calulator buttons
+calculator_buttons = ['7','8','9','+','4','5','6','-',
+                    '1','2','3','x','R','B','0','/']
+
+fila = 1
+columna = 0 
+
+for i in calculator_buttons:
+    i = Button(calculator_frame,
+                text=i.title(),
+                font= ('dosis',16,'bold'),
+                fg='white',
+                bg='azure4',
+                bd=1,
+                width=8)
+    
+    i.grid(row=fila, column= columna)
+    
+    if columna == 3:
+        fila +=1
+    
+    columna += 1
+    
+    if columna == 4:
+        columna = 0
 
 # Avoid closing
-app.mainloop()
+app.mainloop() 
