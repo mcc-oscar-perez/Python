@@ -25,7 +25,8 @@ def revisar_check():
     for i in meal_frame:
         if meal_variables[x].get() == 1:
             meal_frame[x].config(state=NORMAL)
-    x +=1 
+            meal_frame[x].delete(0,END)
+        x +=1 
     
 
 # tkinter init window
