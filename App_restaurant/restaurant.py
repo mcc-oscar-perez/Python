@@ -1,5 +1,33 @@
 from tkinter import *
 
+# Variable 
+operador = ''
+
+def clik_button(numero):
+    global operador
+    operador = operador + numero
+    visor_calculator.delete(0,END)
+    visor_calculator.insert(END,operador)
+    
+def delete_data ():
+    global operador
+    operador = ''
+    visor_calculator.delete(0,END)
+    
+def restult():
+    global operador
+    result_a = str(eval(operador))
+    visor_calculator.delete(0,END)
+    visor_calculator.insert(0,result_a)
+    
+def revisar_check():
+    x= 0
+    for i in meal_frame:
+        if meal_variables[x].get() == 1:
+            meal_frame[x].config(state=NORMAL)
+    x +=1 
+    
+
 # tkinter init window
 app = Tk()
 
@@ -74,7 +102,7 @@ contador = 0
 
 for i in food_list:
     
-    # ceate checkbutton
+    # Create checkbutton
     meal_variables.append('')
     meal_variables[contador] = IntVar()
     i = Checkbutton(meal_frame, 
@@ -82,7 +110,8 @@ for i in food_list:
                     font=('Dosis',19,'bold'),
                     onvalue=1, 
                     offvalue=0,
-                    variable=meal_variables[contador])
+                    variable=meal_variables[contador],
+                    command=revisar_check)
     i.grid(row=contador,
             column=0, 
             sticky=W)
@@ -120,7 +149,9 @@ for i in drinks_list:
                     font=('Dosis',19,'bold'),
                     onvalue=1,
                     offvalue=0,
-                    variable=drinks_variables[contador])
+                    variable=drinks_variables[contador],
+                    command=revisar_check)
+    
     i.grid(row=contador,
             column=0,
             sticky=W)
@@ -158,7 +189,9 @@ for i in dessert_list:
                     font=('Dosis',19,'bold'),
                     onvalue=1,
                     offvalue=0,
-                    variable=dessert_variables[contador])
+                    variable=dessert_variables[contador],
+                    command=revisar_check)
+    
     i.grid(row=contador,
             column=0,
             sticky=W)
@@ -331,6 +364,8 @@ visor_calculator.grid(row=0, column=0, columnspan= 4)
 calculator_buttons = ['7','8','9','+','4','5','6','-',
                     '1','2','3','x','R','B','0','/']
 
+saved_buttons = []
+
 fila = 1
 columna = 0 
 
@@ -343,6 +378,8 @@ for i in calculator_buttons:
                 bd=1,
                 width=8)
     
+    saved_buttons.append(i)
+    
     i.grid(row=fila, column= columna)
     
     if columna == 3:
@@ -352,6 +389,25 @@ for i in calculator_buttons:
     
     if columna == 4:
         columna = 0
+
+
+saved_buttons[0].config(command =  lambda: clik_button("7"))
+saved_buttons[1].config(command =  lambda: clik_button("8"))
+saved_buttons[2].config(command =  lambda: clik_button("9"))
+saved_buttons[3].config(command =  lambda: clik_button("+"))
+saved_buttons[4].config(command =  lambda: clik_button("4"))
+saved_buttons[5].config(command =  lambda: clik_button("5"))
+saved_buttons[6].config(command =  lambda: clik_button("6"))
+saved_buttons[7].config(command =  lambda: clik_button("-"))
+saved_buttons[8].config(command =  lambda: clik_button("1"))
+saved_buttons[9].config(command =  lambda: clik_button("2"))
+saved_buttons[10].config(command =  lambda: clik_button("3"))
+saved_buttons[11].config(command =  lambda: clik_button("*"))
+saved_buttons[12].config(command =  restult)
+saved_buttons[13].config(command =  delete_data)
+saved_buttons[14].config(command =  lambda: clik_button("0"))
+saved_buttons[15].config(command =  lambda: clik_button("/"))
+
 
 # Avoid closing
 app.mainloop() 
