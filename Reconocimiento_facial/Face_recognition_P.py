@@ -62,7 +62,7 @@ def codificar (imagenes):
     return lista_codificada
 
 
-# registrar los ingresos
+# Registrar los ingresos
 # creamos un archivo llamado "f"
 # le pedimos que abra el arhivo almacenado en la carpeta
 # "r+" es el formato que le damos al archivo para tener la posivilidad de escribir en el
